@@ -11,32 +11,41 @@ namespace SkipWorkDaysOff
             switch (d)
             {
                 case DayOfWeek.Sunday:
-                    return "DOM";
+                    return "Domingo";
                 case DayOfWeek.Monday:
-                    return "SEG";
+                    return "Segunda-feira";
                 case DayOfWeek.Tuesday:
-                    return "TER";
+                    return "Terça-feira";
                 case DayOfWeek.Wednesday:
-                    return "QUA";
+                    return "Quarta-feira";
                 case DayOfWeek.Thursday:
-                    return "QUI";
+                    return "Quinta-feira";
                 case DayOfWeek.Friday:
-                    return "SEX";
+                    return "Sexta-feira";
                 case DayOfWeek.Saturday:
-                    return "SAB";
+                    return "Sábado";
                 default:
                     return "-";
             }
         }
 
-        // Inicializando hashset
-        private static HashSet<DateTime> Holidays = new HashSet<DateTime>();
-
-
-        // Verificar se o elemento está presente no hashset ou não
-        private static bool Holiday(DateTime date)
+        private static bool IsHoliday(DateTime date)
         {
-            return Holidays.Contains(date);
+            // Carregar hashset de feriados "fixos"
+            HashSet<DateTime> holidays = new HashSet<DateTime>
+            {
+                new DateTime(DateTime.Now.Year, 1, 1), // Ano Novo
+                new DateTime(DateTime.Now.Year, 4, 10), // Paixão de Cristo
+                new DateTime(DateTime.Now.Year, 4, 21), // Tiradentes
+                new DateTime(DateTime.Now.Year, 5, 1), //Dia do Trabalho
+                new DateTime(DateTime.Now.Year, 9, 7), //Independência
+                new DateTime(DateTime.Now.Year, 10, 12), //Dia  da Nossa Senhora Aparecida
+                new DateTime(DateTime.Now.Year, 11, 2), //Finados
+                new DateTime(DateTime.Now.Year, 11, 15), //Proclamação da República
+                new DateTime(DateTime.Now.Year, 12, 25) //Natal
+            };
+
+            return holidays.Contains(date);
         }
 
         // Referencia que a variável dt.DayOfWeek é igual ao sábado ou igual ao domingo
@@ -51,26 +60,13 @@ namespace SkipWorkDaysOff
 
         public static DateTime NextWorkDay(DateTime dt)
         {
-            while (Holiday(dt) || WorkDay(dt))
+            while (IsHoliday(dt) || WorkDay(dt))
                 dt = dt.AddDays(1);
             return dt;
         }
 
         static void Main(string[] args)
-        {
-
-            // Adicionar feriados com DateTime referenciando pelo ano atual
-
-            Holidays.Add(new DateTime(DateTime.Now.Year, 1, 1)); // Ano Novo
-            Holidays.Add(new DateTime(DateTime.Now.Year, 4, 10)); // Paixão de Cristo
-            Holidays.Add(new DateTime(DateTime.Now.Year, 4, 21)); // Tiradentes
-            Holidays.Add(new DateTime(DateTime.Now.Year, 5, 1)); //Dia do Trabalho
-            Holidays.Add(new DateTime(DateTime.Now.Year, 9, 7)); //Independência
-            Holidays.Add(new DateTime(DateTime.Now.Year, 10, 12)); //Dia  da Nossa Senhora Aparecida
-            Holidays.Add(new DateTime(DateTime.Now.Year, 11, 2)); //Finados
-            Holidays.Add(new DateTime(DateTime.Now.Year, 11, 15)); //Proclamação da República
-            Holidays.Add(new DateTime(DateTime.Now.Year, 12, 25)); //Natal
-
+        {                 
             Console.WriteLine("Pular fim de semanas e feriados");
 
             var hoje = DateTime.Now;
