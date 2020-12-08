@@ -1,0 +1,13 @@
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\bin\Debug\netcoreapp3.1\SkipWorkDaysOff.exe
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\bin\Debug\netcoreapp3.1\SkipWorkDaysOff.deps.json
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\bin\Debug\netcoreapp3.1\SkipWorkDaysOff.runtimeconfig.json
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\bin\Debug\netcoreapp3.1\SkipWorkDaysOff.runtimeconfig.dev.json
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\bin\Debug\netcoreapp3.1\SkipWorkDaysOff.dll
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\bin\Debug\netcoreapp3.1\SkipWorkDaysOff.pdb
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\obj\Debug\netcoreapp3.1\SkipWorkDaysOff.csprojAssemblyReference.cache
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\obj\Debug\netcoreapp3.1\SkipWorkDaysOff.AssemblyInfoInputs.cache
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\obj\Debug\netcoreapp3.1\SkipWorkDaysOff.AssemblyInfo.cs
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\obj\Debug\netcoreapp3.1\SkipWorkDaysOff.csproj.CoreCompileInputs.cache
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\obj\Debug\netcoreapp3.1\SkipWorkDaysOff.dll
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\obj\Debug\netcoreapp3.1\SkipWorkDaysOff.pdb
+C:\Users\david.nascimento.AFIX-OTK\Documents\Estudos\SkipWorkDaysOff\SkipWorkDaysOff\obj\Debug\netcoreapp3.1\SkipWorkDaysOff.genruntimeconfig.cache

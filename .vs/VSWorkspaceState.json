@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SkipWorkDaysOff",
+    "\\SkipWorkDaysOff\\bin",
+    "\\SkipWorkDaysOff\\bin\\Release",
+    "\\SkipWorkDaysOff\\bin\\Release\\netcoreapp3.1",
+    "\\SkipWorkDaysOff\\obj",
+    "\\SkipWorkDaysOff\\obj\\Debug",
+    "\\SkipWorkDaysOff\\obj\\Debug\\netcoreapp3.1",
+    "\\SkipWorkDaysOff\\obj\\Release",
+    "\\SkipWorkDaysOff\\obj\\Release\\netcoreapp3.1"
+  ],
+  "PreviewInSolutionExplorer": false
+}

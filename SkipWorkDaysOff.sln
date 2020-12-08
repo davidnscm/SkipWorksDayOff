@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkipWorkDaysOff", "SkipWorkDaysOff\SkipWorkDaysOff.csproj", "{B39E1028-5239-4305-8718-8FC14638546B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B39E1028-5239-4305-8718-8FC14638546B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39E1028-5239-4305-8718-8FC14638546B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39E1028-5239-4305-8718-8FC14638546B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39E1028-5239-4305-8718-8FC14638546B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E87CB649-D41D-4F3C-AF8D-31D50975BB68}
+	EndGlobalSection
+EndGlobal
