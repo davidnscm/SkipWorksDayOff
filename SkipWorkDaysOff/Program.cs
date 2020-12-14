@@ -48,38 +48,81 @@ namespace SkipWorkDaysOff
             return holidays.Contains(date);
         }
 
-        // Referencia que a variável dt.DayOfWeek é igual ao sábado ou igual ao domingo
+        // Referencia os dias que são úteis
         private static bool WorkDay(DateTime dt)
+        {
+             return dt.DayOfWeek == DayOfWeek.Monday
+                 || dt.DayOfWeek == DayOfWeek.Tuesday
+                 || dt.DayOfWeek == DayOfWeek.Wednesday
+                 || dt.DayOfWeek == DayOfWeek.Thursday
+                 || dt.DayOfWeek == DayOfWeek.Friday;
+        }
+        private static bool IsWeekend(DateTime dt)
         {
             return dt.DayOfWeek == DayOfWeek.Saturday
                  || dt.DayOfWeek == DayOfWeek.Sunday;
         }
 
-
-        // Mostra que quando a função Holiday for diferente da WorkDay, adicionar mais um dia 
-
-        public static DateTime NextWorkDay(DateTime dt)
+        // Mostra que quando a função IsHoliday for diferente da IsWeekend, adicionar um dia
+        /* acceptnextmonth é utilizado para escolher se aceita o próximo mês, 
+           se aceitar retorna o próximo dia útil, se não aceitar retorna ao dia útil anterior */
+        public static DateTime NextWorkDay(DateTime dt, bool acceptnextmonth)
         {
-            while (IsHoliday(dt) || WorkDay(dt))
-                dt = dt.AddDays(1);
+            DateTime result = dt;
+            while (IsHoliday(result) || IsWeekend(result))
+            {
+                result = result.AddDays(1);
+            }
+            if (dt.Month != result.Month)
+            {
+                if (acceptnextmonth)
+                {
+                    return result;
+                }
+                else
+                {
+                    return PreviousWorkDay(dt);
+                }
+            }
+            else
+            {
+                return result;
+            }
+        }
+        
+        // Mostra que quando a função IsHoliday for diferente da IsWeekend, diminuir um dia
+        public static DateTime PreviousWorkDay(DateTime dt)
+        {
+            while (IsHoliday(dt) || IsWeekend(dt))
+                dt = dt.AddDays(-1);
             return dt;
         }
 
         static void Main(string[] args)
-        {                 
+        {
             Console.WriteLine("Pular fim de semanas e feriados");
 
             var hoje = DateTime.Now;
 
-            Console.WriteLine($"\n\n\nHoje é {InitialsDayOfWeek(hoje)} dia {hoje.ToShortDateString()}.");
+            Console.WriteLine($"\nHoje é {InitialsDayOfWeek(hoje)} dia {hoje.ToShortDateString()}.");
 
-            Console.WriteLine("\n\n");
+            Console.WriteLine("\n");
 
-            var dtaux = new DateTime(DateTime.Now.Year, 12, 25);
+            var dtauxproximo = new DateTime(DateTime.Now.Year, 12, 25);
+            var proximodiautil = NextWorkDay(dtauxproximo, true);
+            Console.WriteLine($"Parametro: {dtauxproximo.ToShortDateString()} - o próximo dia útil é: {proximodiautil.ToShortDateString()}");
 
-            var proximodiautil = NextWorkDay(dtaux);
+            var dtauxanterior = new DateTime(DateTime.Now.Year, 12, 26);
+            var diautilanterior = PreviousWorkDay(dtauxanterior);
+            Console.WriteLine($"Parametro: {dtauxanterior.ToShortDateString()} - o dia útil anterior é: {diautilanterior.ToShortDateString()}");
 
-            Console.WriteLine($"Parametro: {dtaux.ToShortDateString()} - o próximo dia útil é: {proximodiautil.ToShortDateString()}");
-        }
+            var dtaux1 = new DateTime(2020, 5, 31);
+            var diautil1 = NextWorkDay(dtaux1, false);
+            Console.WriteLine($"\nParametro: {dtaux1.ToShortDateString()} - Se não aceitar o próximo mês o resultado é: {diautil1.ToShortDateString()}");
+
+            var dtaux2 = new DateTime(2020, 5, 31);
+            var diautil2 = NextWorkDay(dtaux2, true);
+            Console.WriteLine($"Parametro: {dtaux2.ToShortDateString()} - Se aceitar o próximo mês o resultado é: {diautil2.ToShortDateString()}");
+        }    
     }
 }
